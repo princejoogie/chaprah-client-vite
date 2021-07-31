@@ -19,6 +19,21 @@
    - Auth persistence is configured given that the a jwtToken, and refreshToken is returned as a payload in a signin api route. All api calls are inside `./src/apis` folder and are easily configured.
 
 5. State Management
+
    - You may expect redux to be the state management solution for this boilerplate but I personally don't like using redux and would rather use Context API which already comes with react. To level things up in the other hand, Context API is used together with [MobX](https://mobx.js.org/README.html) which is a simple and scalable state management solution.
+
+6. Absolute Imports
+
+   - We all hate relative imports especially when our app gets larger and larger so this boilerplate has absolute imports pre-configured. Base path is `@/` which is the same as `./src`.
+
+   ```js
+   import { TRoute } from '@/types/route';
+   import SigninConfig from '@/app/pages/Signin/config';
+   ```
+
+## Usage
+
+1. Generators
+   - Simply run `yarn generate` and you will be asked either you want to create a `component` or a `page`.
 
 Prince Carlo Jugilon
