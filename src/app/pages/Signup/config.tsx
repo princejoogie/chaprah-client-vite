@@ -4,7 +4,7 @@ import { Signup } from '.';
 const SignupConfig: TRoute = {
   path: '/signup',
   component: Signup,
-  type: 'public',
+  type: 'private',
 };
 
 export default SignupConfig;

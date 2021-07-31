@@ -8,17 +8,17 @@ interface Props extends RouteProps {
   component: TRouteComponent;
 }
 
-function PublicLayout({ component: Component, ...rest }: Props): ReactElement {
+function PrivateLayout({ component: Component, ...rest }: Props): ReactElement {
   return (
     <Route
       {...rest}
       render={props => (
         <Container>
-          <p className="text-xs text-red-500">Public Route</p>
+          <p className="text-xs text-red-500">Private Route</p>
           <Component {...props} />
         </Container>
       )}
     />
   );
 }
-export default PublicLayout;
+export default PrivateLayout;

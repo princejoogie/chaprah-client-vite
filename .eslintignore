@@ -1,0 +1,7 @@
+dist
+
+# vite
+vite.config.ts
+
+# tailwind
+tailwind.config.js
