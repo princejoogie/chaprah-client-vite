@@ -1,7 +1,10 @@
-import React from "react";
+/**
+ *
+ * Signin
+ *
+ */
+import React from 'react';
 
-interface Props {}
-
-export function Signin({}: Props) {
-  return <div>Hello from Signin</div>;
-}
+export const Signin: React.FC = () => {
+  return <div>Page from Signin</div>;
+};

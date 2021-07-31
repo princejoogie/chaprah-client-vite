@@ -1,6 +1,8 @@
-export async function getProfile() {
+import { TUser } from '@/models/user.model';
+
+export async function getProfile(): Promise<TUser> {
   return {
-    firstName: "Prince",
-    lastName: "Juguilon",
+    firstName: 'Prince',
+    lastName: 'Juguilon',
   };
 }

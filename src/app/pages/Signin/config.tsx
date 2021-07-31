@@ -1,10 +1,10 @@
-import { TRoute } from "@/types/route";
-import { Signin } from ".";
+import { TRoute } from '@/types/route';
+import { Signin } from '.';
 
 const SigninConfig: TRoute = {
-  path: "/",
+  path: '/',
   component: Signin,
-  type: "public",
+  type: 'public',
   exact: true,
 };
 
