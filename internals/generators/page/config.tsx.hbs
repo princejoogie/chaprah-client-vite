@@ -1,0 +1,14 @@
+import { TRoute } from "@/types/route";
+import { {{ properCase componentName }} } from ".";
+
+const {{ properCase componentName }}Config: TRoute = {
+  path: "{{ routeName }}",
+  component: {{ properCase componentName }},
+  {{#if wantPrivate}}
+  type: "private",
+  {{else}}
+  type: "public",
+  {{/if}}
+};
+
+export default {{ properCase componentName }}Config;
