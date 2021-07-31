@@ -1,7 +1,12 @@
-import React from "react";
+/**
+ *
+ * Signup
+ *
+ */
+import React from 'react';
 
 interface Props {}
 
-export function Signup({}: Props) {
-  return <div>Hello from Signup</div>;
+export function Signup(props: Props) {
+  return <div>Page from Signup</div>;
 }
