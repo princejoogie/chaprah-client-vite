@@ -1,5 +1,5 @@
 import axios from "axios";
-import * as _ from "lodash";
+import _ from "lodash";
 
 const axiosInstance = axios.create({
   baseURL: process.env.REACT_APP_API_BASE || "",

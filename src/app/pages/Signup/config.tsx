@@ -1,4 +1,4 @@
-import { TRoute } from "../../../types/route";
+import { TRoute } from "@/types/route";
 import { Signup } from ".";
 
 const SignupConfig: TRoute = {

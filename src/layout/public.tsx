@@ -1,6 +1,7 @@
 import React, { ReactElement } from "react";
 import { Route, RouteProps } from "react-router-dom";
-import { TRouteComponent } from "types/route";
+
+import { TRouteComponent } from "@/types/route";
 
 interface Props extends RouteProps {
   component: TRouteComponent;
