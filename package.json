@@ -44,7 +44,6 @@
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^7.0.1",
     "inquirer": "^8.1.2",
     "inquirer-directory": "^2.2.0",
