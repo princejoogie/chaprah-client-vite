@@ -8,9 +8,12 @@ import { observer } from 'mobx-react';
 
 import { useState } from 'react';
 import useSignin from '@/app/core/useSignin';
+import { useAppStore } from '@/store/AppStore';
 
 export const Signin: React.FC = observer(() => {
   const { login, mutation, errorMessage } = useSignin();
+  const appStore = useAppStore();
+  console.log(appStore.user);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

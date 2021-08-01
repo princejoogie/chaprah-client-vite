@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import { useAppStore } from '@/store/AppStore';
 import { useMutation, UseMutationResult } from 'react-query';
-import { TSignin, TSigninResponse } from '@/models/signin.model';
+import { TSignin, TSigninErrorResponse, TSigninSuccessResponse } from '@/models/signin.model';
 import { signin } from '@/apis/Authentication';
 import api from '@/utils/api';
 import { useHistory } from 'react-router-dom';
-import { AxiosResponse } from 'axios';
+import { AxiosError } from 'axios';
 
 interface TReturn {
   errorMessage: string | null;
   login: (data: TSignin) => Promise<void>;
-  mutation: UseMutationResult<AxiosResponse<TSigninResponse>, unknown, TSignin, unknown>;
+  mutation: UseMutationResult<TSigninSuccessResponse, AxiosError<TSigninErrorResponse>, TSignin, unknown>;
 }
 
 const useSignin = (): TReturn => {
@@ -20,7 +20,7 @@ const useSignin = (): TReturn => {
 
   const mutation = useMutation((item: TSignin) => signin(item), {
     onSuccess: response => {
-      const { jwtToken, refreshToken } = response.data;
+      const { refreshToken, jwtToken } = response;
 
       if (jwtToken) {
         appStore.updateUserToken(jwtToken, refreshToken);
@@ -33,8 +33,8 @@ const useSignin = (): TReturn => {
       }
     },
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    onError: () => {
-      setErrorMessage('Something went wrong, Please try again later.');
+    onError: (e: AxiosError<TSigninErrorResponse>) => {
+      setErrorMessage(e.response?.data.message ?? 'Something went wrong, Please try again later.');
     },
   });
 

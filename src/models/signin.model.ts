@@ -3,9 +3,13 @@ export type TSignin = {
   password: string;
 };
 
-export type TSigninResponse = {
+export type TSigninErrorResponse = {
   success: boolean;
-  message?: string;
+  message: string;
+};
+
+export type TSigninSuccessResponse = {
+  success: boolean;
   jwtToken?: string;
   refreshToken: string;
 };

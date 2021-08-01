@@ -6,9 +6,8 @@ const ONE_MINUTE = 60000;
  * Global Handling Error
  * @param error: error form server
  */
-function useErrorHandler(error: unknown) {
-  console.log(error);
-}
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+function useErrorHandler() {}
 
 export function generateQueryClient(): QueryClient {
   return new QueryClient({
