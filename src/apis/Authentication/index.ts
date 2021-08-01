@@ -1,8 +1,8 @@
-import { TSignin } from '@/models/signin.model';
+import { TSignin, TSigninResponse } from '@/models/signin.model';
+import api from '@/utils/api';
+import { AxiosResponse } from 'axios';
 
-export async function signin(): Promise<TSignin> {
-  return {
-    success: true,
-    jwtToken: 'ksndipu12h3807chb1ho2p19dnskljnd1208uch10e8u',
-  };
+export async function signin(data: TSignin): Promise<AxiosResponse<TSigninResponse>> {
+  const res = await api.post('api/auth/signin', data);
+  return res.data;
 }

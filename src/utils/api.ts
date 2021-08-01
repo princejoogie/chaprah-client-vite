@@ -1,8 +1,9 @@
 import axios from 'axios';
 import _ from 'lodash';
+import { appStore } from '@/store/AppStore';
 
 const axiosInstance = axios.create({
-  baseURL: process.env.REACT_APP_API_BASE || '',
+  baseURL: 'http://localhost:5000',
   headers: {
     'Content-type': 'application/json',
     Accept: 'application/json',
@@ -12,16 +13,16 @@ const axiosInstance = axios.create({
 });
 
 axiosInstance.interceptors.request.use(function (config) {
-  //   const store = appStore;
+  const store = appStore;
 
-  //   if (store?.userToken) {
-  config.headers.common['Authorization'] = `Bearer jkajsnhpqw`;
-  config.baseURL = process.env.REACT_APP_API_BASE || '';
-  //   }
+  if (store?.jwtToken) {
+    config.headers.common['Authorization'] = `Bearer ${store.jwtToken}`;
+    config.baseURL = 'http://localhost:5000';
+  }
 
   return config;
 });
 
-export const baseUrl: string | undefined = process.env.REACT_APP_API_BASE;
+export const baseUrl: string | undefined = 'http://localhost:5000';
 
 export default _.clone(axiosInstance);

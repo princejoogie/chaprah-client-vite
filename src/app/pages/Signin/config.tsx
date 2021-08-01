@@ -2,7 +2,7 @@ import { TRoute } from '@/types/route';
 import { Signin } from '.';
 
 const SigninConfig: TRoute = {
-  path: '/',
+  path: '/signin',
   component: Signin,
   type: 'public',
   exact: true,
