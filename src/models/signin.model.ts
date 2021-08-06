@@ -13,3 +13,9 @@ export type TSigninSuccessResponse = {
   jwtToken?: string;
   refreshToken: string;
 };
+
+export type TRefreshTokenResponse = {
+  success: boolean;
+  jwtToken?: string;
+  refreshToken: string;
+};

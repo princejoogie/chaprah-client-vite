@@ -1,6 +1,6 @@
-const Paths = {
+const PathURL = {
   signin: '/signin',
   signup: '/signup',
 };
 
-export default Paths;
+export default PathURL;
