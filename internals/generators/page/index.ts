@@ -4,6 +4,7 @@ import inquirer from 'inquirer';
 import { pathExists } from '../utils';
 import { baseGeneratorPath } from '../paths';
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 inquirer.registerPrompt('directory', require('inquirer-directory'));
 
 export enum ComponentProptNames {
